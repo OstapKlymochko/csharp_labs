@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace csharp_labs.Lab1// Note: actual namespace depends on the project name.
+namespace csharp_labs.Lab1
 {
     class Lab1
     {
         static void Main()
         {
-            //Task1();
-            //Task2(0.5,5,10);
+            Task1();
+            Task2(0.5, 5, 10);
             Task3();
         }
         static double getFractionPart(double num)
@@ -32,10 +32,10 @@ namespace csharp_labs.Lab1// Note: actual namespace depends on the project name.
 
                 }
 
-                Console.WriteLine($"{numCopy} у вісімковій системі числення: 0.{res}");
+                Console.WriteLine($"{numCopy} у вісімковій системі числення: 0.{res}\n");
                 return;
             }
-            Console.WriteLine("Невалідне значення :(");
+            Console.WriteLine("Невалідне значення :(\n");
         }
         static void Task2(double x, double y, double z)
         {
@@ -45,7 +45,7 @@ namespace csharp_labs.Lab1// Note: actual namespace depends on the project name.
             double a = (xyz - 3 * Math.Abs(x + Math.Cbrt(y))) / (1000 + sqLgVal); // xyz * 3|x + cbrt(y)|  /  1000 + sqLgVal
             double b = (1000 + sqLgVal) * Math.Sin(xyz) - Math.Cos(xyz) * Math.Cos(xyz); // (1000 + sqLgVal) * sin(xyz) - cos^2(xyz)
             double c = xyz - xyz * xyz * xyz / 6; // xyz - xyz^3 / 3! ;
-            Console.WriteLine("Результат: {0}", Math.Max(Math.Min(a, b), c));
+            Console.WriteLine("Результат: {0}\n", Math.Max(Math.Min(a, b), c));
         }
         static void Task3()
         {
@@ -53,6 +53,7 @@ namespace csharp_labs.Lab1// Note: actual namespace depends on the project name.
             // Знайти номер мінімального елемента вектора b.
             ushort rows = 7;
             ushort cols = 5;
+            Console.WriteLine("Матриця:");
             int[,] matrix = generateMatrix(rows, cols);
             printMatrix(matrix, rows, cols);
             uint[] arr = new uint[7];
@@ -65,6 +66,7 @@ namespace csharp_labs.Lab1// Note: actual namespace depends on the project name.
                 }
                 arr[i] = (uint)sum;
             }
+            Console.WriteLine("Результуючий вектор:");
             for (ushort i = 0; i < 7; ++i)
             {
                 Console.Write($"{arr[i]} ");
