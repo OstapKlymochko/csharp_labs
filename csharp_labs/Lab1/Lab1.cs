@@ -10,9 +10,9 @@ namespace csharp_labs.Lab1
             Task2(0.5, 5, 10);
             Task3();
         }
-        static double getFractionPart(double num)
+        static double GetFractionPart(double num)
         {
-            return num - Math.Truncate(num);
+            return num - (int)num;
         }
         static void Task1()
         {
@@ -26,8 +26,8 @@ namespace csharp_labs.Lab1
                 for (ushort i = 0; i < 7; ++i)
                 {
                     num *= 8;
-                    res += Math.Truncate(num);
-                    num = getFractionPart(num);
+                    res += (int)num;
+                    num = GetFractionPart(num);
                     if (num == 0.0) break;
 
                 }
@@ -54,8 +54,8 @@ namespace csharp_labs.Lab1
             ushort rows = 7;
             ushort cols = 5;
             Console.WriteLine("Матриця:");
-            int[,] matrix = generateMatrix(rows, cols);
-            printMatrix(matrix, rows, cols);
+            int[,] matrix = GenerateMatrix(rows, cols);
+            PrintMatrix(matrix, rows, cols);
             uint[] arr = new uint[7];
             for (ushort i = 0; i < 7; ++i)
             {
@@ -74,7 +74,7 @@ namespace csharp_labs.Lab1
             Console.WriteLine();
 
         }
-        static void printMatrix(int[,] arr, ushort rows, ushort cols)
+        static void PrintMatrix(int[,] arr, ushort rows, ushort cols)
         {
             for (ushort i = 0; i < rows; ++i)
             {
@@ -87,7 +87,7 @@ namespace csharp_labs.Lab1
             Console.WriteLine();
         }
 
-        static int[,] generateMatrix(uint rows, uint cols)
+        static int[,] GenerateMatrix(uint rows, uint cols)
         {
             Random val = new Random();
             int[,] matrix = new int[rows, cols];
