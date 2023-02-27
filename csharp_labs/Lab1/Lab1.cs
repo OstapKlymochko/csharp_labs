@@ -6,7 +6,7 @@ namespace csharp_labs.Lab1
     {
         static void Main()
         {
-            Task1();
+            //Task1();
             Task2(0.5, 5, 10);
             Task3();
         }
@@ -71,6 +71,15 @@ namespace csharp_labs.Lab1
             {
                 Console.Write($"{arr[i]} ");
             }
+            uint min = 0;
+            for (ushort i = 1; i < 7; ++i)
+            {
+                if (arr[i] < arr[min])
+                {
+                    min = i;
+                }
+            }
+            Console.WriteLine("\nНомер мінімального елемента - {0}", min);
             Console.WriteLine();
 
         }
