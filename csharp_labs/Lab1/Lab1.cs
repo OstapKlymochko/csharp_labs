@@ -7,7 +7,7 @@ namespace csharp_labs.Lab1
         static void Main()
         {
             //Task1();
-            Task2(0.5, 5, 10);
+            Task2(2.0, 3.0, 4.0);
             Task3();
         }
         static double GetFractionPart(double num)
@@ -40,12 +40,15 @@ namespace csharp_labs.Lab1
         static void Task2(double x, double y, double z)
         {
             //Дано x, y, z. Обчислити min(max(a, b), c);
-            double xyz = z * y * z;
+            double xyz = x * y * z;
             double sqLgVal = Math.Sqrt(Math.Log10(24));
             double a = (xyz - 3 * Math.Abs(x + Math.Cbrt(y))) / (1000 + sqLgVal); // xyz * 3|x + cbrt(y)|  /  1000 + sqLgVal
             double b = (1000 + sqLgVal) * Math.Sin(xyz) - Math.Cos(xyz) * Math.Cos(xyz); // (1000 + sqLgVal) * sin(xyz) - cos^2(xyz)
             double c = xyz - xyz * xyz * xyz / 6; // xyz - xyz^3 / 3! ;
-            Console.WriteLine("Результат: {0}\n", Math.Max(Math.Min(a, b), c));
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+            Console.WriteLine(c);
+            Console.WriteLine("Результат: {0}\n", Math.Min(Math.Max(a, b), c));
         }
         static void Task3()
         {
